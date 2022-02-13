@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_into1"
+        android:id="@+id/slider_img"
+        android:layout_height="wrap_content">
+    </ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/slider_img"
+        android:text="Best Braking Spots"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:id="@+id/slider_txt"
+        android:textAlignment="center"
+        android:layout_height="wrap_content">
+    </TextView>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="30dp"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:text="SKIP"
+           android:id="@+id/skip_btn"
+           android:textSize="18dp"
+           android:layout_marginStart="20dp"
+           android:gravity="start"
+           android:layout_height="wrap_content">
+       </TextView>
+
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:orientation="horizontal"
+           android:layout_centerHorizontal="true"
+           android:layout_centerVertical="true"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:src="@drawable/unselected"
+               android:id="@+id/ind_1"
+               android:layout_height="wrap_content">
+           </ImageView>
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:src="@drawable/unselected"
+               android:id="@+id/ind_2"
+               android:layout_marginLeft="5dp"
+               android:layout_height="wrap_content">
+           </ImageView>
+
+       </LinearLayout>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginEnd="20dp"
+           android:gravity="end"
+           android:text="NEXT"
+           android:id="@+id/next_btn"
+           android:textColor="@color/purple_500"
+           android:textSize="18dp"></TextView>
+
+
+   </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/logo"
+                android:layout_marginTop="140dp"
+                android:layout_height="wrap_content">
+            </ImageView>
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="100dp"
+                android:hint="Enter Address"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:padding="10dp"
+                android:hint="Password"
+                android:layout_height="wrap_content">
+            </com.google.android.material.textfield.TextInputEditText>
+            <TextView
+                android:layout_width="match_parent"
+                android:textAlignment="textEnd"
+                android:textSize="18dp"
+
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/purple_500"
+                android:text="Forgot Password?"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <com.gigamole.library.ShadowLayout
+                android:id="@+id/shadowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:sl_shadow_angle="90"
+                app:sl_shadow_color="@color/purple_700"
+                app:sl_shadow_distance="2dp"
+                app:sl_shadow_radius="7dp"
+                app:sl_shadowed="true">
+
+                <TextView
+                    android:id="@+id/ivYourImageName"
+                    android:layout_width="match_parent"
+                    android:layout_margin="20dp"
+                    android:text="Login"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:background="@color/button" />
+            </com.gigamole.library.ShadowLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:id="@+id/signup_btn"
+                android:textColor="@color/purple_500"
+                android:text="Or SignUp"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
