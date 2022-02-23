@@ -15,5 +15,6 @@ public class PasswordActivity extends AppCompatActivity {
         create_account_btn = findViewById(R.id.create_account_btn);
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

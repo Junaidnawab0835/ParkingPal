@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
+    BottomNavigationView bottomNavigationView;
     FloatingActionButton floatingActionButton;
     BottomAppBar bottomAppBar;
     @Override
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         floatingActionButton = findViewById(R.id.fab);
         bottomAppBar = findViewById(R.id.bottomAppBar);
         navigationView = findViewById(R.id.navigation_view);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         navigationView.setNavigationItemSelectedListener(this);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
         // pass the Open and Close toggle for the drawer layout listener
@@ -63,6 +65,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 //close navigation drawer
                 drawerLayout.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        Fragment fragment = null;
+        fragment = new MapsFragment();
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.main_framelayout, fragment);
+            ft.commit();
+        }
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                switch (item.getItemId()) {
+                    case R.id.home_nav_bottom:
+                        fragment = new MapsFragment();
+                        break;
+                }
+
+                if (fragment != null) {
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.main_framelayout, fragment);
+                    ft.commit();
+                }
+                return false;
             }
         });
 

@@ -19,6 +19,7 @@ public class PhoneActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),PasswordActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

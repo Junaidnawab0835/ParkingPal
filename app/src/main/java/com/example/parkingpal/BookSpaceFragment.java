@@ -1,12 +1,18 @@
 package com.example.parkingpal;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.os.TestLooperManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +20,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class BookSpaceFragment extends Fragment {
+    TextView book_space_btn;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +66,35 @@ public class BookSpaceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_book_space, container, false);
+        View view = inflater.inflate(R.layout.fragment_book_space, container, false);
+        book_space_btn = view.findViewById(R.id.book_space_btn);
+        book_space_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(getActivity().LAYOUT_INFLATER_SERVICE);
+                View view1 = inflater.inflate(R.layout.dialog_success, null);
+                final Dialog dialog = new Dialog(getContext());
+                dialog.setContentView(view1);
+                dialog.setCancelable(true);
+                dialog.setCanceledOnTouchOutside(true);
+                dialog.show();
+                final Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialog.dismiss();
+                        Fragment fragment = null;
+                        fragment = new BookingDetailsFragment();
+                        if (fragment != null) {
+                            FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                            ft.replace(R.id.main_framelayout, fragment);
+                            ft.commit();
+                        }
+                    }
+                }, 2000);
+
+            }
+        });
+        return view;
     }
 }
